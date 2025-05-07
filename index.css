@@ -1,170 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&display=swap');
+
 body {
-  background: linear-gradient(135deg, #f0e2d4, #e1d1c1); /* Soft vintage gradient */
-  color: #4f4a49; /* Warm dark gray */
+  background: linear-gradient(145deg, #f3efe7, #dcd3c3);
+  color: #3e2f2f;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  font-family: 'Crimson Pro', serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  box-sizing: border-box;
+  min-height: 100vh;
+  background-image: 
+    url('https://www.transparenttextures.com/patterns/paper-fibers.png'),
+    url('https://cdn-icons-png.flaticon.com/512/1773/1773730.png'); /* Clock symbol */
+  background-repeat: repeat, no-repeat;
+  background-position: top left, center center;
+  background-size: auto, 200px;
+  background-attachment: fixed;
 }
 
 .container {
-  background-color: #fff8f2; /* Soft cream color */
-  border-radius: 25px;
-  padding: 40px 50px; /* Increased padding for better visibility */
-  max-width: 800px;
-  width: 100%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+  background-color: #fdf6e3;
+  border: 5px double #b08b6f;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px rgba(90, 70, 50, 0.3);
+  padding: 50px 40px;
+  max-width: 850px;
+  width: 95%;
+  margin: 30px auto;
   text-align: center;
-  overflow: hidden;
   position: relative;
-  border: 2px solid #d0a7a1; /* Light border for vintage feel */
-  margin: auto; /* Center the form */
+  z-index: 1;
 }
 
-/* Time Capsule Header */
-h1, h2 {
-  color: #c97e69; /* Warm, rust orange */
-  font-size: 2rem;
-  margin-bottom: 30px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.container::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+  background: url('https://cdn-icons-png.flaticon.com/512/4271/4271262.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.1;
+  z-index: 0;
 }
 
 h1 {
-  font-size: 2.5rem;
-  text-transform: lowercase;
-  color: #2d3a2d; /* Dark olive green for depth */
+  color: #523a28;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  border-bottom: 2px dashed #b08b6f;
+  display: inline-block;
+  padding-bottom: 10px;
 }
 
-/* Inputs and text areas */
+h2 {
+  color: #6f4f3a;
+  margin-top: 40px;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
 input, textarea {
   width: 100%;
-  padding: 15px 18px; /* Increased padding */
-  margin-bottom: 20px; /* Increased margin between inputs */
-  border: 2px solid #c97e69; /* Warm rust border */
-  border-radius: 25px;
-  background-color: #f9e6d3; /* Light beige background */
+  padding: 14px 18px;
+  margin-bottom: 25px;
+  border: 2px solid #b08b6f;
+  border-radius: 15px;
+  background-color: #fbf5e6;
   font-size: 1rem;
-  color: #4f4a49;
-  box-sizing: border-box;
+  color: #3e2f2f;
+  font-family: 'Crimson Pro', serif;
   transition: all 0.3s ease-in-out;
 }
 
-/* Focus effect on inputs */
 input:focus, textarea:focus {
-  border-color: #bb6b55; /* Darker rust color on focus */
-  background-color: #fff;
+  background-color: #fffaf0;
+  border-color: #8d674f;
   outline: none;
 }
 
-/* Button styling */
+label {
+  display: block;
+  text-align: left;
+  margin: 15px 0 5px;
+  color: #6a4e3b;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
 button {
-  background-color: #d78b7a; /* Soft coral color */
-  color: white;
+  background-color: #8d674f;
+  color: #fffaf0;
   border: none;
-  padding: 15px 40px; /* Larger button padding */
-  border-radius: 25px;
-  font-size: 1.2rem;
+  padding: 12px 35px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-family: 'Crimson Pro', serif;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  margin: 10px 5px;
 }
 
 button:hover {
-  background-color: #c47662; /* Slightly darker coral for hover effect */
+  background-color: #6f4f3a;
 }
 
-/* Capsule letters list */
 ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-  margin-top: 30px;
 }
 
 li {
-  background: #f9e6d3; /* Light beige background */
+  background: #f5ecdb;
+  padding: 25px;
   margin: 20px 0;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  border-left: 8px solid #b08b6f;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   text-align: left;
-  transition: all 0.3s ease;
-}
-
-li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease forwards;
 }
 
 li strong {
-  color: #d78b7a; /* Soft coral */
+  font-size: 1.2rem;
+  color: #8d674f;
 }
 
 li p {
-  color: #5b4e3a; /* Muted brown for text */
+  margin: 10px 0;
+  color: #4a3c34;
   font-size: 1rem;
-}
-
-/* Unlock/locked styling */
-li p {
-  font-size: 1rem;
-  margin-top: 8px;
-}
-
-li p strong {
-  font-size: 1.1rem;
-}
-
-li p span {
-  font-weight: bold;
 }
 
 li p span.locked {
-  color: #c00; /* Red for locked */
+  color: #a94442;
+  font-weight: bold;
 }
 
 li p span.unlocked {
-  color: #2c8d2b; /* Green for unlocked */
+  color: #3c763d;
+  font-weight: bold;
 }
 
-/* Decryption section */
+/* Decryption Output */
 #decryptedOutput {
   margin-top: 30px;
-  background: #f9e6d3; /* Light beige */
-  padding: 20px;
-  border-radius: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  background: #fefaf2;
+  padding: 25px;
+  border-left: 6px solid #7f5d4c;
+  border-radius: 15px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
 }
 
 #decryptedOutput h4 {
-  color: #2d3a2d; /* Dark olive green */
-  margin-bottom: 10px;
+  color: #4a3c34;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
 }
 
 #decryptedOutput p {
   font-size: 1.1rem;
-  color: #4f4a49;
+  color: #3e2f2f;
 }
 
-/* Labels */
-label {
-  font-weight: bold;
-  color: #d78b7a; /* Soft coral */
-  font-size: 1rem;
-  margin-bottom: 8px; /* More spacing between label and input */
-  display: inline-block;
-}
-
-/* Capsule-like animation for sending letters */
-@keyframes bounceIn {
+/* Animations */
+@keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
@@ -172,39 +180,62 @@ label {
   }
 }
 
-.container {
-  animation: bounceIn 0.6s ease-out;
-}
-
-button, input, textarea {
-  animation: bounceIn 0.5s ease-out;
-}
-
-input[type="date"] {
-  cursor: pointer;
-}
-
-input[type="password"] {
-  letter-spacing: 1px;
-}
-
-/* Responsive Styling */
+/* 🌐 Mobile Optimization */
 @media (max-width: 768px) {
   .container {
-    padding: 20px;
-    width: 90%;
+    padding: 30px 20px;
+    margin: 20px;
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  input, textarea {
+    font-size: 0.95rem;
+    padding: 12px 16px;
   }
 
   button {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    padding: 10px 26px;
+  }
+
+  li {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
   }
 
   input, textarea {
     font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+    margin: 6px 2px;
+  }
+
+  li {
+    padding: 18px;
   }
 
   #decryptedOutput p {
