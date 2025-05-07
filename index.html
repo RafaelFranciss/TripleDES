@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unsent Letters - Time Capsule Edition</title>
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Time Capsule Letter</h1>
+    
+    <input type="text" id="to" placeholder="To (Receiver)" />
+    <textarea id="letter" placeholder="Write your letter here..."></textarea>
+    <!-- New time capsule field -->
+    <label for="unlockDate">Unlock Date:</label>
+    <input type="date" id="unlockDate" />
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Password for encryption" />
+    <button onclick="saveLetter()">Send Letter</button>
+
+    <h2>Your Letter 📜</h2>
+    <ul id="letterList"></ul>
+
+    <h2>Manual Decryption 🗝️</h2>
+    <textarea id="decryptionInput" placeholder="Enter encrypted message here..."></textarea>
+    <input type="text" id="keyInput" placeholder="Enter key for decryption (Hex)..." />
+    <input type="password" id="decryptionPassword" placeholder="Enter password for decryption..." />
+    <button onclick="decryptManual()">Decrypt</button>
+    <button onclick="clearDecryption()">Clear</button> <!-- Clear Decryption Button -->
+    <div id="decryptedOutput"></div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

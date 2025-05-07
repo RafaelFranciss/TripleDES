@@ -1,0 +1,213 @@
+body {
+  background: linear-gradient(135deg, #f0e2d4, #e1d1c1); /* Soft vintage gradient */
+  color: #4f4a49; /* Warm dark gray */
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #fff8f2; /* Soft cream color */
+  border-radius: 25px;
+  padding: 40px 50px; /* Increased padding for better visibility */
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #d0a7a1; /* Light border for vintage feel */
+  margin: auto; /* Center the form */
+}
+
+/* Time Capsule Header */
+h1, h2 {
+  color: #c97e69; /* Warm, rust orange */
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-transform: lowercase;
+  color: #2d3a2d; /* Dark olive green for depth */
+}
+
+/* Inputs and text areas */
+input, textarea {
+  width: 100%;
+  padding: 15px 18px; /* Increased padding */
+  margin-bottom: 20px; /* Increased margin between inputs */
+  border: 2px solid #c97e69; /* Warm rust border */
+  border-radius: 25px;
+  background-color: #f9e6d3; /* Light beige background */
+  font-size: 1rem;
+  color: #4f4a49;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Focus effect on inputs */
+input:focus, textarea:focus {
+  border-color: #bb6b55; /* Darker rust color on focus */
+  background-color: #fff;
+  outline: none;
+}
+
+/* Button styling */
+button {
+  background-color: #d78b7a; /* Soft coral color */
+  color: white;
+  border: none;
+  padding: 15px 40px; /* Larger button padding */
+  border-radius: 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: #c47662; /* Slightly darker coral for hover effect */
+}
+
+/* Capsule letters list */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+li {
+  background: #f9e6d3; /* Light beige background */
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+li strong {
+  color: #d78b7a; /* Soft coral */
+}
+
+li p {
+  color: #5b4e3a; /* Muted brown for text */
+  font-size: 1rem;
+}
+
+/* Unlock/locked styling */
+li p {
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+li p strong {
+  font-size: 1.1rem;
+}
+
+li p span {
+  font-weight: bold;
+}
+
+li p span.locked {
+  color: #c00; /* Red for locked */
+}
+
+li p span.unlocked {
+  color: #2c8d2b; /* Green for unlocked */
+}
+
+/* Decryption section */
+#decryptedOutput {
+  margin-top: 30px;
+  background: #f9e6d3; /* Light beige */
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+#decryptedOutput h4 {
+  color: #2d3a2d; /* Dark olive green */
+  margin-bottom: 10px;
+}
+
+#decryptedOutput p {
+  font-size: 1.1rem;
+  color: #4f4a49;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  color: #d78b7a; /* Soft coral */
+  font-size: 1rem;
+  margin-bottom: 8px; /* More spacing between label and input */
+  display: inline-block;
+}
+
+/* Capsule-like animation for sending letters */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: bounceIn 0.6s ease-out;
+}
+
+button, input, textarea {
+  animation: bounceIn 0.5s ease-out;
+}
+
+input[type="date"] {
+  cursor: pointer;
+}
+
+input[type="password"] {
+  letter-spacing: 1px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+
+  input, textarea {
+    font-size: 0.9rem;
+  }
+
+  #decryptedOutput p {
+    font-size: 1rem;
+  }
+}
