@@ -1,85 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: linear-gradient(145deg, #f3efe7, #dcd3c3);
   color: #3e2f2f;
   margin: 0;
   padding: 0;
   font-family: 'Crimson Pro', serif;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .container {
   background-color: #fdf6e3;
-  border: 6px double #b08b6f;
-  border-radius: 50px;
+  border: 5px double #b08b6f;
+  border-radius: 30px;
   box-shadow: 0 15px 40px rgba(90, 70, 50, 0.3);
   padding: 50px 40px;
-  max-width: 850px;
-  width: 95%;
-  margin: 30px auto;
+  max-width: 800px;
+  width: 100%;
+  margin: 30px 20px;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  z-index: 1;
 }
 
-/* Capsule-themed clock/scroll/bottle visual */
 .container::before {
   content: "";
   position: absolute;
-  top: -35px;
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background-size: contain;
-  opacity: 0.3;
-  z-index: 0;
+  opacity: 0.2;
 }
 
 h1 {
   color: #523a28;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   text-transform: capitalize;
-  letter-spacing: 1.2px;
   border-bottom: 2px dashed #b08b6f;
   display: inline-block;
   padding-bottom: 10px;
-  position: relative;
-  z-index: 1;
 }
 
 h2 {
   color: #6f4f3a;
-  margin-top: 40px;
-  font-size: 2rem;
-  text-decoration: underline;
-  position: relative;
-  z-index: 1;
+  font-size: 1.8rem;
+  margin-top: 30px;
 }
 
 label {
   display: block;
-  text-align: center;
-  margin: 15px auto 5px;
+  margin: 15px 0 5px;
   color: #6a4e3b;
   font-weight: 600;
   font-size: 1rem;
-  max-width: 600px;
+  text-align: left;
 }
 
 input, textarea {
-  max-width: 600px;
   width: 100%;
-  margin: 0 auto 25px;
-  display: block;
   padding: 14px 18px;
+  margin-bottom: 25px;
   border: 2px solid #b08b6f;
   border-radius: 15px;
   background-color: #fbf5e6;
@@ -99,10 +93,9 @@ button {
   background-color: #8d674f;
   color: #fffaf0;
   border: none;
-  padding: 12px 35px;
+  padding: 12px 30px;
   border-radius: 20px;
   font-size: 1rem;
-  font-family: 'Crimson Pro', serif;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
   margin: 10px 5px;
@@ -115,8 +108,6 @@ button:hover {
 ul {
   list-style: none;
   padding: 0;
-  margin: 30px auto 0;
-  max-width: 700px;
 }
 
 li {
@@ -151,7 +142,6 @@ li p span.unlocked {
   font-weight: bold;
 }
 
-/* Decryption Output */
 #decryptedOutput {
   margin-top: 30px;
   background: #fefaf2;
@@ -159,9 +149,6 @@ li p span.unlocked {
   border-left: 6px solid #7f5d4c;
   border-radius: 15px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #decryptedOutput h4 {
@@ -175,7 +162,6 @@ li p span.unlocked {
   color: #3e2f2f;
 }
 
-/* Animations */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -187,4 +173,37 @@ li p span.unlocked {
   }
 }
 
-/* Responsive*
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  label {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  input, textarea {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  #decryptedOutput {
+    padding: 20px;
+  }
+}
